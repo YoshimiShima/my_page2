@@ -4,7 +4,7 @@
     <NButton @click="cb2">useNotification</NButton>
     <NButton @click="cb3">useDialog</NButton>
     <NButton @click="cb4">useLoadingBar</NButton>
-  </NSpace>
+  </NSpace> -->
 </template>
 
 <script lang="ts" setup>
