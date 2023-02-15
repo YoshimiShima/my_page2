@@ -1,5 +1,5 @@
-<template>
-  <div>
-    <NuxtPage />
-  </div>
+<template lang="pug">
+
+NuxtPage
+
 </template>

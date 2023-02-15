@@ -20,7 +20,7 @@
                 <template #trigger>
                   <NButton>NPopconfirm</NButton>
                 </template>
-              </NPopconfirm>
+              </NPopconfirm>1
               <NPopover>
                 <template #trigger>
                   <NButton>NPopover</NButton>

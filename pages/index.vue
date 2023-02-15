@@ -1,63 +1,60 @@
 <template>
-  <NForm ref="formRef" :model="model" :rules="rules">
-    <NFormItem path="name" label="名前">
-      <NInput v-model:value="model.name" @keydown.enter.prevent />
-    </NFormItem>
-    <NFormItem path="email" label="メールアドレス">
-      <NInput v-model:value="model.email" @keydown.enter.prevent />
-    </NFormItem>
-    <NFormItem path="password" label="パスワード">
-      <NInput v-model:value="model.password"
-        type="password"
-        @input="handlePasswordInput"
-        @keydown.enter.prevent />
-    </NFormItem>
-    <NRow :gutter="[0, 24]">
-      <NCol :span="24">
-        <div style="display: flex; justify-content: flex-end">
-      <NButton @click="handleValidateClick">
-        Validate
-      </NButton>
-        </div>
-      </NCol>
-    </NRow>
-  </NForm>
-  <NDatePicker />
+  <NConfigProvider inline-theme-disabled>
+    <NMessageProvider>
+      <NNotificationProvider>
+        <NLoadingBarProvider>
+          <NDialogProvider>
+              NForm
+              <NForm
+              ref="formRef"
+              inline
+              :label-width="100"
+              :model="formValue"
+              :rules="rules"
+              :size="size">
+                <NFormItem label="FormItem">
+                  <NInput />
+                </NFormItem>
+                <NFormItemRow>
+                  
+                </NFormItemRow>
+              </NForm>
+            <Provided />
+          </NDialogProvider>
+        </NLoadingBarProvider>
+      </NNotificationProvider>
+    </NMessageProvider>
+  </NConfigProvider>
 </template>
 
 <script lang="ts" setup>
 import {
+  NConfigProvider,
+  NButton,
+  NSpace,
+  NA,
+  NDialogProvider,
   NForm,
   NFormItem,
   NFormItemCol,
+  NFormItemGi,
+  NFormItemGridItem,
   NFormItemRow,
   NInput,
-  NButton,
-  NDatePicker,
-  FormInst,
-  FormItemInst,
-  FormItemRule,
-  FormValidationError,
-  useMessage,
-  FormRules,
-  NRow,
-  NCol
+  NInputGroup,
+  NInputGroupLabel,
+  NInputNumber,
+  NLoadingBarProvider,
+  NMessageProvider,
+  NNotificationProvider,
 } from 'naive-ui'
 import Provided from './Provided.vue'
-
-interface ModelType {
-  name: string | null
-  password: string | null
-  email: string | null
-}
-
 
 
 </script>
 
 <style>
 body {
-  padding: 20px;
-  width: 800px;
+  padding: 16px;
 }
 </style>
